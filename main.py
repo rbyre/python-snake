@@ -74,12 +74,12 @@ while game_on:
     new_position = snake.get_snake_parts()[-1].position()
     snake.add_part(new_position)
 
-  #
-  
+  # Game over når kanten treffes
   # if snake.head.xcor() >= 300 or snake.head.xcor()<= -300 or snake.head.ycor() >= 300 or snake.head.ycor()<= -300:
   #   game_on = False
   #   scoreboard.reset()
 
+  # Kommer inn i skjerm på motsatt side når en går ut av skjerm
   if snake.head.xcor() > 300:
     snake.head.goto(-300, snake.head.ycor())
   elif snake.head.xcor() < -300:
