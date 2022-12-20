@@ -63,6 +63,10 @@ while game_on:
   screen.onkey( snake.move_down, 'Down')
   screen.onkey( snake.move_left, 'Left')
   screen.onkey( snake.move_right, 'Right')
+  screen.onkey( snake.move_up, 'w')
+  screen.onkey( snake.move_down, 's')
+  screen.onkey( snake.move_left, 'a')
+  screen.onkey( snake.move_right, 'd')
   screen.listen()
   screen.update()
   time.sleep(.1)
@@ -71,8 +75,10 @@ while game_on:
   if snake.head.distance(food) < 15:
     food.refresh()
     scoreboard.add_one_point()
-    new_position = snake.get_snake_parts()[-1].position()
-    snake.add_part(new_position)
+    randomlength = r.randint(1,5)
+    for length in range(randomlength):
+      new_position = snake.get_snake_parts()[-1].position()
+      snake.add_part(new_position)
 
   # Game over når kanten treffes
   # if snake.head.xcor() >= 300 or snake.head.xcor()<= -300 or snake.head.ycor() >= 300 or snake.head.ycor()<= -300:
