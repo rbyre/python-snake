@@ -69,7 +69,7 @@ while game_on:
   screen.onkey( snake.move_right, 'd')
   screen.listen()
   screen.update()
-  time.sleep(.1)
+  time.sleep(.2)
   
   snake.move()
   if snake.head.distance(food) < 15:
@@ -93,7 +93,7 @@ while game_on:
   elif snake.head.ycor() > 300:
     snake.head.goto(snake.head.xcor(), -300)
   elif snake.head.ycor() < -300:
-    snake.head.goto(snake.head.ycor(), 300)
+    snake.head.goto(snake.head.xcor(), 300)
   
   # Detect collision with tail
   for part in snake.get_snake_parts()[1 : ]:

@@ -48,6 +48,7 @@ class Scoreboard(Turtle):
       file = open('highscore.txt', 'rb')
       data = pickle.load(file)
       self.highscore = data
+      file.close()
 
 
   # def game_over(self):
